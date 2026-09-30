@@ -1,0 +1,81 @@
+{
+  "versao": "3.0",
+  "observacao": "Configuracao de coleta. O ponteiro processed/snapshot_atual.json identifica uma execucao completa e imutavel; a tentativa atual e o ultimo dado valido ficam separados. A unidade vem do contrato do parser, nao de inferencia da LLM.",
+  "fontes": [
+    {
+      "id": "selic_11",
+      "nome": "Selic efetiva SGS 11",
+      "formato": "bcb_json",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados/ultimos/10?formato=json",
+      "documentacao": "https://dadosabertos.bcb.gov.br/dataset/11-taxa-de-juros---selic",
+      "unidade": "pct_ao_dia",
+      "defasagem_maxima_dias": 4,
+      "politica_defasagem": "Limite tecnico em dias corridos, nao prova de ultima publicacao; indicador mensal usa mes de referencia."
+    },
+    {
+      "id": "selic_meta_432",
+      "nome": "Meta Selic SGS 432",
+      "formato": "bcb_json",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json",
+      "documentacao": "https://dadosabertos.bcb.gov.br/dataset/432-taxa-de-juros---meta-selic-definida-pelo-copom",
+      "unidade": "pct_ao_ano",
+      "defasagem_maxima_dias": 4,
+      "politica_defasagem": "Limite tecnico em dias corridos, nao prova de ultima publicacao; indicador mensal usa mes de referencia.",
+      "janela_dias": 30
+    },
+    {
+      "id": "cdi_12",
+      "nome": "CDI diário SGS 12 (Banco Central)",
+      "formato": "bcb_json",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados/ultimos/10?formato=json",
+      "documentacao": "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=12",
+      "unidade": "pct_ao_dia",
+      "defasagem_maxima_dias": 4,
+      "politica_defasagem": "Limite técnico em dias corridos. CDI não é substituído pela Selic."
+    },
+    {
+      "id": "poupanca_195",
+      "nome": "Poupança SGS 195 (período indicado por data e dataFim)",
+      "formato": "bcb_json",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.195/dados/ultimos/10?formato=json",
+      "documentacao": "https://dadosabertos.bcb.gov.br/dataset/195-depositos-de-poupanca-a-partir-de-04052012---rentabilidade-no-periodo",
+      "unidade": "pct_no_periodo_informado",
+      "defasagem_maxima_dias": 4,
+      "politica_defasagem": "Limite tecnico em dias corridos, nao prova de ultima publicacao; indicador mensal usa mes de referencia."
+    },
+    {
+      "id": "ipca_433",
+      "nome": "IPCA mensal SGS 433 (indicador do IBGE reproduzido pelo BC)",
+      "formato": "bcb_json",
+      "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados/ultimos/20?formato=json",
+      "documentacao": "https://www3.bcb.gov.br/sgspub/consultarvalores/consultarValoresSeries.do?method=consultarSeries&series=433",
+      "origem_indice": "https://www.ibge.gov.br/estatisticas/economicas/precos-e-custos/9256-indice-nacional-de-precos-ao-consumidor-amplo.html",
+      "unidade": "pct_no_mes",
+      "defasagem_maxima_dias": 65,
+      "politica_defasagem": "Limite tecnico em dias corridos, nao prova de ultima publicacao; indicador mensal usa mes de referencia."
+    },
+    {
+      "id": "tesouro_manha",
+      "nome": "Tesouro Direto, preços e taxas publicados para a manhã",
+      "formato": "tesouro_csv",
+      "url": "https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3/resource/796d2059-14e9-44e3-80c9-2d9e30b405c1/download/precotaxatesourodireto.csv",
+      "documentacao": "https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto",
+      "unidade": "taxa_titulo_pct_ao_ano_e_preco_brl",
+      "defasagem_maxima_dias": 4,
+      "limite_download_bytes": 30000000,
+      "politica_defasagem": "Limite tecnico em dias corridos, nao prova de ultima publicacao; indicador mensal usa mes de referencia."
+    }
+  ],
+  "fontes_documentais": [
+    "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026",
+    "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/preenchimento/manual-mir/rendimentos/rendimentos-do-capital",
+    "https://www.tesourodireto.com.br/sobre-o-tesouro/regras-e-regulamento",
+    "https://www.fgc.org.br/sobre-garantia-fgc"
+  ],
+  "desativados_ate_validacao": [
+    {
+      "id": "ofertas_bancarias",
+      "motivo": "Exigem emissor, taxa e condições contratuais identificadas e data de validade."
+    }
+  ]
+}

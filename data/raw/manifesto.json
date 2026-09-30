@@ -1,0 +1,28 @@
+{
+  "snapshots_originais": [
+    {
+      "arquivo": "selic_11.csv",
+      "nome_original": "Selic efetiva - série 11.csv",
+      "sha256": "14a66d23c32cb2d7d4486f390699c23102f41cb338ef7a395891a69f0b4b47d8",
+      "bytes": 266,
+      "recebido_em": "2026-09-28",
+      "historico_nao_atualiza_automaticamente": true
+    },
+    {
+      "arquivo": "poupanca_195.csv",
+      "nome_original": "Poupança - série 195.csv",
+      "sha256": "799025cf54b6d55b4fd6b14dc7b9b7b0cf42057cd29c310aac77cf7731cfd77d",
+      "bytes": 386,
+      "recebido_em": "2026-09-28",
+      "historico_nao_atualiza_automaticamente": true
+    },
+    {
+      "arquivo": "tesouro_taxas_precos.csv",
+      "nome_original": "Preços e taxas do Tesouro Direto.csv",
+      "sha256": "731734666b8011ae176a286e626ae430f38a71c6fe3711c369fddb4ea9718a96",
+      "bytes": 14538777,
+      "recebido_em": "2026-09-28",
+      "historico_nao_atualiza_automaticamente": true
+    }
+  ]
+}

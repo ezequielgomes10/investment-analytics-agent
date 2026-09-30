@@ -1,0 +1,91 @@
+{
+  "versao": "1.0",
+  "descricao": "Capacidades da base de conhecimento. Dados disponíveis não significam cálculo implementado ou adequação ao usuário.",
+  "motor_rentabilidade_implementado": false,
+  "tributacao_validada_para_calculo": false,
+  "custos_validados_para_calculo": false,
+  "produtos": {
+    "poupanca": {
+      "fontes": [
+        "poupanca_195"
+      ],
+      "pendencias": [
+        "Modelar aniversário por depósito e hipóteses de rendimento futuro."
+      ]
+    },
+    "tesouro_selic": {
+      "fontes": [
+        "tesouro_manha",
+        "selic_11"
+      ],
+      "fontes_contextuais": [
+        "selic_meta_432"
+      ],
+      "pendencias": [
+        "Modelar indexador, condições do título e preço na venda antecipada."
+      ]
+    },
+    "tesouro_prefixado": {
+      "fontes": [
+        "tesouro_manha"
+      ],
+      "pendencias": [
+        "Implementar fluxo até o vencimento e cenários de preço na venda antecipada."
+      ]
+    },
+    "tesouro_ipca": {
+      "fontes": [
+        "tesouro_manha",
+        "ipca_433"
+      ],
+      "pendencias": [
+        "Modelar inflação futura como hipótese e preço na venda antecipada."
+      ]
+    },
+    "cdb": {
+      "fontes": [
+        "cdi_12"
+      ],
+      "pendencias": [
+        "Obter oferta documentada e verificar taxa, liquidez, validade e emissor."
+      ]
+    },
+    "lci": {
+      "fontes": [
+        "cdi_12"
+      ],
+      "pendencias": [
+        "Obter oferta documentada e verificar taxa, carência, vencimento e elegibilidade no prazo da meta."
+      ]
+    },
+    "lca": {
+      "fontes": [
+        "cdi_12"
+      ],
+      "pendencias": [
+        "Obter oferta documentada e verificar taxa, carência, vencimento e elegibilidade no prazo da meta."
+      ]
+    }
+  },
+  "titulos_mapeados": {
+    "Tesouro Selic": {
+      "produto_id": "tesouro_selic",
+      "natureza_taxa": "componente_adicional_ao_indexador_selic",
+      "fluxo": "sem_cupons"
+    },
+    "Tesouro Prefixado": {
+      "produto_id": "tesouro_prefixado",
+      "natureza_taxa": "taxa_prefixada_anual",
+      "fluxo": "sem_cupons"
+    },
+    "Tesouro IPCA+": {
+      "produto_id": "tesouro_ipca",
+      "natureza_taxa": "taxa_real_adicional_ao_ipca",
+      "fluxo": "sem_cupons"
+    }
+  },
+  "politica_titulos_nao_mapeados": "Preservar no snapshot para auditoria e excluir das linhas selecionadas para análise.",
+  "politica_ofertas": "Cadastro manual é informação não verificada. Nenhuma oferta é liberada automaticamente por um rótulo no CSV.",
+  "politica_impostos": "Regras documentais não liberam resultado líquido. IOF, vigência, custos e tributação por aporte devem ser implementados e testados no motor.",
+  "politica_fontes": "Apenas consulta bem-sucedida, validada, persistida e dentro da defasagem pode alimentar o grupo de publicações recentes. Isso não autoriza previsão nem contratação."
+}

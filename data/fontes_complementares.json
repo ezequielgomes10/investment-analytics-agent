@@ -1,0 +1,41 @@
+{
+  "versao": 1,
+  "fontes": [
+    {
+      "id": "focus",
+      "nome": "Focus — expectativas de Selic e IPCA",
+      "tipo": "focus",
+      "url": "https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais?$top=100&$orderby=Data%20desc&$filter=(Indicador%20eq%20%27Selic%27%20or%20Indicador%20eq%20%27IPCA%27)%20and%20baseCalculo%20eq%200&$format=json",
+      "documentacao": "https://dadosabertos.bcb.gov.br/dataset/expectativas-mercado",
+      "defasagem_maxima_dias": 10
+    },
+    {
+      "id": "anbima",
+      "nome": "ANBIMA — feriados bancários",
+      "tipo": "anbima",
+      "url": "https://www.anbima.com.br/feriados/arqs/feriados_nacionais.xls",
+      "documentacao": "https://www.anbima.com.br/feriados/"
+    },
+    {
+      "id": "of_btg",
+      "nome": "Open Finance — BTG Investimentos",
+      "tipo": "openfinance",
+      "url": "https://btgpactualdigital.openbanking.btgpactual.com/open-banking/opendata-investments/v1/bank-fixed-incomes",
+      "documentacao": "https://data.directory.openbankingbrasil.org.br/participants"
+    },
+    {
+      "id": "of_bb",
+      "nome": "Open Finance — Banco do Brasil",
+      "tipo": "openfinance",
+      "url": "https://opendata.api.bb.com.br/open-banking/opendata-investments/v1/bank-fixed-incomes",
+      "documentacao": "https://data.directory.openbankingbrasil.org.br/participants"
+    },
+    {
+      "id": "daycoval",
+      "nome": "Daycoval — condições publicadas",
+      "tipo": "documental",
+      "url": "https://www.daycoval.com.br/investimentos/renda-fixa/taxas-prazos-proprios/",
+      "documentacao": "https://www.daycoval.com.br/investimentos/renda-fixa/taxas-prazos-proprios/"
+    }
+  ]
+}

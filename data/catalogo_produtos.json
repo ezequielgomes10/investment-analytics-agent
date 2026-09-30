@@ -1,0 +1,98 @@
+{
+  "versao": "1.0",
+  "revisado_em": "2026-09-28",
+  "escopo": "Descrição de classes de investimentos para pessoa física residente no Brasil. Não representa oferta, taxa vigente ou recomendação personalizada.",
+  "produtos": [
+    {
+      "id": "poupanca",
+      "nome": "Poupança",
+      "classe": "renda_fixa_bancaria",
+      "indexadores_possiveis": ["regra_legal_da_poupanca"],
+      "taxa_atual": null,
+      "liquidez": "Resgate disponível; rendimento observa a data de aniversário.",
+      "riscos": ["crédito da instituição", "perda de poder de compra"],
+      "garantia": "FGC, se depósito elegível e respeitados os limites vigentes",
+      "tributacao_id": "poupanca_pf",
+      "exige_oferta_individual": false,
+      "fonte_conceitual": "https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/titulos-bancarios"
+    },
+    {
+      "id": "tesouro_selic",
+      "nome": "Tesouro Selic",
+      "classe": "titulo_publico",
+      "indexadores_possiveis": ["Selic mais condições do título"],
+      "taxa_atual": null,
+      "liquidez": "Consultar regras e preço de recompra; venda antes do vencimento pode ter preço diferente do esperado.",
+      "riscos": ["preço na venda antecipada", "risco soberano", "inflação"],
+      "garantia": "Tesouro Nacional; não coberto pelo FGC",
+      "tributacao_id": "renda_fixa_tributada_pf",
+      "exige_oferta_individual": false,
+      "fonte_conceitual": "https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/titulos-publicos"
+    },
+    {
+      "id": "tesouro_prefixado",
+      "nome": "Tesouro Prefixado",
+      "classe": "titulo_publico",
+      "indexadores_possiveis": ["taxa prefixada do título e vencimento"],
+      "taxa_atual": null,
+      "liquidez": "Recompra sujeita a preço de mercado; confirmar título e vencimento.",
+      "riscos": ["oscilação do preço na venda antecipada", "inflação", "risco soberano"],
+      "garantia": "Tesouro Nacional; não coberto pelo FGC",
+      "tributacao_id": "renda_fixa_tributada_pf",
+      "exige_oferta_individual": false,
+      "fonte_conceitual": "https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/titulos-publicos"
+    },
+    {
+      "id": "tesouro_ipca",
+      "nome": "Tesouro IPCA+",
+      "classe": "titulo_publico",
+      "indexadores_possiveis": ["IPCA mais taxa real do título e vencimento"],
+      "taxa_atual": null,
+      "liquidez": "Recompra sujeita a preço de mercado; confirmar título e vencimento.",
+      "riscos": ["oscilação do preço na venda antecipada", "risco soberano"],
+      "garantia": "Tesouro Nacional; não coberto pelo FGC",
+      "tributacao_id": "renda_fixa_tributada_pf",
+      "exige_oferta_individual": false,
+      "fonte_conceitual": "https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/titulos-publicos"
+    },
+    {
+      "id": "cdb",
+      "nome": "CDB",
+      "classe": "renda_fixa_bancaria",
+      "indexadores_possiveis": ["percentual da Taxa DI", "prefixado", "IPCA mais taxa"],
+      "taxa_atual": null,
+      "liquidez": "Depende do contrato: conferir carência, vencimento e condições de resgate.",
+      "riscos": ["crédito do emissor", "restrição de liquidez", "reinvestimento"],
+      "garantia": "FGC, se aplicação elegível e respeitados os limites vigentes",
+      "tributacao_id": "renda_fixa_tributada_pf",
+      "exige_oferta_individual": true,
+      "fonte_conceitual": "https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/titulos-bancarios"
+    },
+    {
+      "id": "lci",
+      "nome": "LCI",
+      "classe": "renda_fixa_bancaria",
+      "indexadores_possiveis": ["percentual da Taxa DI", "prefixado", "IPCA mais taxa"],
+      "taxa_atual": null,
+      "liquidez": "Depende da emissão e das regras vigentes: conferir carência, vencimento e possibilidade de resgate.",
+      "riscos": ["crédito do emissor", "restrição de liquidez"],
+      "garantia": "FGC, se aplicação elegível e respeitados os limites vigentes",
+      "tributacao_id": "lci_lca_pf",
+      "exige_oferta_individual": true,
+      "fonte_conceitual": "https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/titulos-bancarios"
+    },
+    {
+      "id": "lca",
+      "nome": "LCA",
+      "classe": "renda_fixa_bancaria",
+      "indexadores_possiveis": ["percentual da Taxa DI", "prefixado", "IPCA mais taxa"],
+      "taxa_atual": null,
+      "liquidez": "Depende da emissão e das regras vigentes: conferir carência, vencimento e possibilidade de resgate.",
+      "riscos": ["crédito do emissor", "restrição de liquidez"],
+      "garantia": "FGC, se aplicação elegível e respeitados os limites vigentes",
+      "tributacao_id": "lci_lca_pf",
+      "exige_oferta_individual": true,
+      "fonte_conceitual": "https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/titulos-bancarios"
+    }
+  ]
+}

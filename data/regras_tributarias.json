@@ -1,0 +1,93 @@
+{
+  "versao": "1.1",
+  "revisado_em": "2026-09-28",
+  "escopo": "Regras gerais para pessoa física residente no Brasil. Conferir vigência e particularidades antes de executar cálculos líquidos.",
+  "regras": [
+    {
+      "id": "renda_fixa_tributada_pf",
+      "aplica_a": [
+        "tesouro_selic",
+        "tesouro_prefixado",
+        "tesouro_ipca",
+        "cdb"
+      ],
+      "ir_sobre_rendimento": {
+        "tipo": "regressivo_por_prazo",
+        "faixas_dias": [
+          {
+            "min_dias": 0,
+            "max_dias": 180,
+            "aliquota_pct": 22.5
+          },
+          {
+            "min_dias": 181,
+            "max_dias": 360,
+            "aliquota_pct": 20.0
+          },
+          {
+            "min_dias": 361,
+            "max_dias": 720,
+            "aliquota_pct": 17.5
+          },
+          {
+            "min_dias": 721,
+            "max_dias": null,
+            "aliquota_pct": 15.0
+          }
+        ],
+        "observacao": "Prazo contado por aplicação; aportes em datas diferentes podem ter alíquotas diferentes. Para títulos com cupons, validar eventos de pagamento."
+      },
+      "iof": {
+        "resgates_com_menos_de_30_dias": true,
+        "tabela_diaria_validada": false,
+        "bloquear_calculo_liquido_abaixo_30_dias": true,
+        "observacao": "A incidência antes de 30 dias está documentada; as alíquotas diárias não foram cadastradas neste arquivo."
+      },
+      "fontes": [
+        "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026",
+        "https://www.tesourodireto.com.br/sobre-o-tesouro/regras-e-regulamento"
+      ]
+    },
+    {
+      "id": "lci_lca_pf",
+      "aplica_a": [
+        "lci",
+        "lca"
+      ],
+      "ir_sobre_rendimento": {
+        "tipo": "isento_pf_sujeito_a_vigencia",
+        "aliquota_pct": 0,
+        "observacao": "Validar titularidade, emissão e vigência legal antes de apresentar líquido."
+      },
+      "iof": {
+        "tratamento": "verificar_contrato_e_legislacao",
+        "tabela_diaria_validada": false
+      },
+      "fontes": [
+        "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/preenchimento/manual-mir/rendimentos/rendimentos-do-capital"
+      ]
+    },
+    {
+      "id": "poupanca_pf",
+      "aplica_a": [
+        "poupanca"
+      ],
+      "ir_sobre_rendimento": {
+        "tipo": "isento_pf_sujeito_a_vigencia",
+        "aliquota_pct": 0
+      },
+      "regra_de_rendimento": "Respeitar a data de aniversário e a regra aplicável ao depósito.",
+      "fontes": [
+        "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/preenchimento/manual-mir/rendimentos/rendimentos-do-capital",
+        "https://www.gov.br/investidor/pt-br/investir/tipos-de-investimentos/titulos-bancarios"
+      ]
+    }
+  ],
+  "validacao": {
+    "estado": "documental_pendente_validacao_para_calculo",
+    "permite_calculo_liquido": false,
+    "vigencia_inicio": null,
+    "vigencia_fim": null,
+    "observacao": "Data de revisao do arquivo nao certifica vigencia legal. O motor devera validar regras, IOF, custos e cada aporte antes de apresentar valores liquidos."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "meta_brl": 15000,
+  "saldo_inicial_brl": 5000,
+  "aporte_mensal_brl": 2000,
+  "prazo_meses": 4,
+  "necessita_resgate_antecipado": false,
+  "produtos": ["poupanca", "tesouro_selic", "tesouro_prefixado", "tesouro_ipca", "cdb", "lci", "lca"]
+}

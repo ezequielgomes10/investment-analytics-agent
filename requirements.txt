@@ -1,0 +1,5 @@
+streamlit>=1.50,<2
+pandas>=2.2,<4
+google-genai>=1.55,<2
+truststore>=0.10,<1
+xlrd>=2.0.1,<3
