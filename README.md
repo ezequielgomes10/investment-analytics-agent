@@ -1,3 +1,5 @@
+<p align="center">
+  <img src="assets/logo.svg" width="132" height="156" alt="IAA — símbolo de um banco clássico">
 </p>
 
 <p align="center">
